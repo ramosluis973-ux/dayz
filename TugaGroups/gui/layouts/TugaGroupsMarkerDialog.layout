@@ -1,0 +1,10 @@
+<Widget type="PanelWidget" name="MarkerDialogRoot" size="0.4 0.36" halign="center" valign="center" flags="Visible">
+    <TextWidget text="Create Marker" size="0.4 0.05" position="0 0" />
+    <EditBoxWidget name="MarkerName" text="" size="0.4 0.05" position="0 0.06" />
+    <XComboBoxWidget name="MarkerIcon" size="0.4 0.05" position="0 0.12" />
+    <EditBoxWidget name="MarkerColor" text="4294967295" size="0.4 0.05" position="0 0.18" />
+    <XComboBoxWidget name="MarkerScope" size="0.4 0.05" position="0 0.24" />
+    <CheckBoxWidget name="MarkerRender3D" text="3D" size="0.4 0.05" position="0 0.3" />
+    <ButtonWidget name="MarkerCreate" text="Create" size="0.19 0.05" position="0 0.32" />
+    <ButtonWidget name="MarkerCancel" text="Cancel" size="0.19 0.05" position="0.21 0.32" />
+</Widget>
