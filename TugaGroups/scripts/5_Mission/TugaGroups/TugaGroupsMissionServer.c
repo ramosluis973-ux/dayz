@@ -81,7 +81,7 @@ modded class MissionServer
         GetRPCManager().SendRPC(
             "TugaGroups",
             "SyncMarkers",
-            new Param4<array<ref TugaGroupsAdminMarker>, array<ref TugaGroupsGroupMarker>, array<ref TugaGroupsPingMarker>, array<ref TugaGroupsPrivateMarker>>(
+            new Param4<array<ref TugaGroupsAdminMarker>, array<ref TugaGroupsGroupMarker>, array<ref TugaGroupsPingMarker>, array<ref TugaGroupsPrivateMarker> >(
                 m_MarkerService.GetAdminMarkers(),
                 groupMarkers,
                 groupPings,
