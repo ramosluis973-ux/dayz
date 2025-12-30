@@ -7,6 +7,11 @@ class TugaGroupsGroupHud
     void TugaGroupsGroupHud()
     {
         m_Root = GetGame().GetWorkspace().CreateWidgets("TugaGroups/gui/layouts/TugaGroupsGroupHud.layout");
+        if (!m_Root)
+        {
+            Print("[TugaGroupsGroupHud] Failed to create layout TugaGroupsGroupHud.layout");
+            return;
+        }
         m_ListRoot = m_Root.FindAnyWidget("TugaGroupsGroupHudListRoot");
         m_Rows = new array<Widget>();
     }
@@ -56,10 +61,20 @@ class TugaGroupsGroupHud
             float distance = vector.Distance(localPos, target.GetPosition());
             string name = member.Name;
             float health = target.GetHealth("", "");
+
+            // Normalize health for ProgressBar (accept both 0..1 and 0..100 ranges)
+            float hpNorm = health;
+            if (hpNorm > 1.0)
+            {
+                hpNorm = hpNorm / 100.0;
+            }
+            hpNorm = Math.Clamp(hpNorm, 0.0, 1.0);
+
             string distanceLabel = Math.Floor(distance).ToString() + "m";
             Widget rowWidget = GetGame().GetWorkspace().CreateWidgets("TugaGroups/gui/layouts/TugaGroupsGroupHudRow.layout", m_ListRoot);
             if (!rowWidget)
             {
+                Print("[TugaGroupsGroupHud] Failed to create row widget");
                 continue;
             }
 
@@ -76,8 +91,8 @@ class TugaGroupsGroupHud
             }
             if (rowHealth)
             {
-                rowHealth.SetCurrent(health);
-                int color = health > 0 ? ARGB(255, 0, 200, 0) : ARGB(255, 200, 0, 0);
+                rowHealth.SetCurrent(hpNorm);
+                int color = hpNorm > 0.0 ? ARGB(255, 0, 200, 0) : ARGB(255, 200, 0, 0);
                 rowHealth.SetColor(color);
             }
             m_Rows.Insert(rowWidget);
