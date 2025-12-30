@@ -495,9 +495,10 @@ modded class MapMenu
             }
 
             string label = marker.Name;
-            if (marker is TugaGroupsPingMarker && marker.Size > 0)
+            TugaGroupsPingMarker pingMarker = TugaGroupsPingMarker.Cast(marker);
+            if (pingMarker && pingMarker.Size > 0)
             {
-                label = string.Format("%1 (x%2)", label, Math.Round(marker.Size * 10) / 10);
+                label = string.Format("%1 (x%2)", label, Math.Round(pingMarker.Size * 10) / 10);
             }
             if (ShouldShowDistance(distance, typeSettings, globalSettings))
             {
