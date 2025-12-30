@@ -78,21 +78,12 @@ modded class MissionServer
         }
         privateMarkers = m_MarkerService.GetPrivateMarkers(identity.GetId());
 
-        Param4<
-            array<ref TugaGroupsAdminMarker>,
-            array<ref TugaGroupsGroupMarker>,
-            array<ref TugaGroupsPingMarker>,
-            array<ref TugaGroupsPrivateMarker> > markerSync =
-            new Param4<
-                array<ref TugaGroupsAdminMarker>,
-                array<ref TugaGroupsGroupMarker>,
-                array<ref TugaGroupsPingMarker>,
-                array<ref TugaGroupsPrivateMarker> >(
-                m_MarkerService.GetAdminMarkers(),
-                groupMarkers,
-                groupPings,
-                privateMarkers
-            );
+        Param4 markerSync = new Param4(
+            m_MarkerService.GetAdminMarkers(),
+            groupMarkers,
+            groupPings,
+            privateMarkers
+        );
 
         GetRPCManager().SendRPC(
             "TugaGroups",
