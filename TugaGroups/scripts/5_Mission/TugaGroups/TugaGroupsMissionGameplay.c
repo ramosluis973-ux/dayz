@@ -2,14 +2,14 @@ class TugaGroupsClientManager
 {
     private static ref TugaGroupsClientManager s_Instance;
     ref TugaGroupsClientState State;
-    ref TugaGroupsGroupHud GroupHud;
+    ref TugaGroupsGroupHudView GroupHud;
     ref TugaGroupsNameplate Nameplate;
     ref TugaGroupsCompassHud CompassHud;
 
     void TugaGroupsClientManager()
     {
         State = new TugaGroupsClientState();
-        GroupHud = new TugaGroupsGroupHud();
+        GroupHud = new TugaGroupsGroupHudView();
         Nameplate = new TugaGroupsNameplate();
         CompassHud = new TugaGroupsCompassHud();
     }

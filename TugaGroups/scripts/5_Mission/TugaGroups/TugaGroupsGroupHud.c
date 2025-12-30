@@ -1,10 +1,10 @@
-class TugaGroupsGroupHud
+class TugaGroupsGroupHudView
 {
     private Widget m_Root;
     private Widget m_ListRoot;
     private ref array<Widget> m_Rows;
 
-    void TugaGroupsGroupHud()
+    void TugaGroupsGroupHudView()
     {
         m_Root = GetGame().GetWorkspace().CreateWidgets("TugaGroups/gui/layouts/TugaGroupsGroupHud.layout");
         m_ListRoot = m_Root.FindAnyWidget("TugaGroupsGroupHudListRoot");
