@@ -1,0 +1,64 @@
+<Widget type="PanelWidget" name="TugaGroupsTabsRoot" size="0.3 0.08" position="0.01 0.01" halign="left" valign="top" flags="Visible">
+    <ButtonWidget name="TugaGroupsTabMap" text="Map" size="0.1 0.05" position="0 0" />
+    <ButtonWidget name="TugaGroupsTabGroups" text="Group" size="0.1 0.05" position="0.1 0" />
+    <ButtonWidget name="TugaGroupsTabConfig" text="Settings" size="0.1 0.05" position="0.2 0" />
+</Widget>
+
+<Widget type="PanelWidget" name="TugaGroupsGroupsPanel" size="0.35 0.86" position="0.01 0.12" halign="left" valign="top" flags="Visible">
+    <Widget type="PanelWidget" name="TugaGroupsLogo" size="0.18 0.18" position="0.02 0.02" />
+    <TextWidget text="Online Players" size="0.32 0.03" position="0.02 0.22" />
+    <TextListboxWidget name="TugaGroupsOnlineList" size="0.32 0.2" position="0.02 0.25" />
+    <TextWidget text="Search" size="0.32 0.03" position="0.02 0.46" />
+    <EditBoxWidget name="TugaGroupsOnlineSearch" text="" size="0.32 0.04" position="0.02 0.49" />
+    <ButtonWidget name="TugaGroupsInvite" text="Invite" size="0.32 0.04" position="0.02 0.54" />
+
+    <TextWidget text="Group Members" size="0.32 0.03" position="0.02 0.6" />
+    <TextListboxWidget name="TugaGroupsGroupList" size="0.32 0.22" position="0.02 0.63" />
+
+    <ButtonWidget name="TugaGroupsPromote" text="Promote" size="0.15 0.04" position="0.02 0.86" />
+    <ButtonWidget name="TugaGroupsDemote" text="Demote" size="0.15 0.04" position="0.19 0.86" />
+    <ButtonWidget name="TugaGroupsKick" text="Kick" size="0.15 0.04" position="0.02 0.91" />
+    <ButtonWidget name="TugaGroupsTransfer" text="Transfer" size="0.15 0.04" position="0.19 0.91" />
+    <ButtonWidget name="TugaGroupsLeave" text="Leave" size="0.15 0.04" position="0.02 0.96" />
+    <ButtonWidget name="TugaGroupsDisband" text="Disband" size="0.15 0.04" position="0.19 0.96" />
+
+    <TextWidget text="Create Group" size="0.32 0.03" position="0.02 0.72" />
+    <EditBoxWidget name="TugaGroupsGroupName" text="" size="0.32 0.04" position="0.02 0.75" />
+    <EditBoxWidget name="TugaGroupsGroupTag" text="" size="0.32 0.04" position="0.02 0.8" />
+    <ButtonWidget name="TugaGroupsCreateGroup" text="Create" size="0.32 0.04" position="0.02 0.85" />
+</Widget>
+
+<Widget type="PanelWidget" name="TugaGroupsConfigPanel" size="0.68 0.86" position="0.32 0.12" halign="left" valign="top" flags="Visible">
+    <TextWidget text="Layout Styles" size="0.32 0.03" position="0.02 0.02" />
+    <XComboBoxWidget name="TugaGroupsLayoutStyle" size="0.32 0.04" position="0.02 0.06" />
+    <TextWidget text="GPS Size" size="0.32 0.03" position="0.02 0.11" />
+    <XComboBoxWidget name="TugaGroupsGpsSize" size="0.32 0.04" position="0.02 0.15" />
+    <TextWidget text="GPS Zoom" size="0.32 0.03" position="0.02 0.2" />
+    <SliderWidget name="TugaGroupsGpsZoom" size="0.32 0.04" position="0.02 0.24" />
+    <TextWidget text="Player Marker Position" size="0.32 0.03" position="0.02 0.29" />
+    <XComboBoxWidget name="TugaGroupsMarkerPos" size="0.32 0.04" position="0.02 0.33" />
+    <CheckBoxWidget name="TugaGroupsMarkerIcon" text="Icon" size="0.1 0.04" position="0.02 0.38" />
+    <CheckBoxWidget name="TugaGroupsMarkerName" text="Name" size="0.1 0.04" position="0.12 0.38" />
+    <CheckBoxWidget name="TugaGroupsMarkerDistance" text="Distance" size="0.12 0.04" position="0.22 0.38" />
+
+    <TextWidget text="Color Settings" size="0.32 0.03" position="0.36 0.02" />
+    <TextListboxWidget name="TugaGroupsColorList" size="0.32 0.32" position="0.36 0.06" />
+    <EditBoxWidget name="TugaGroupsColorAlpha" text="255" size="0.32 0.04" position="0.36 0.4" />
+    <EditBoxWidget name="TugaGroupsColorRed" text="255" size="0.32 0.04" position="0.36 0.45" />
+    <EditBoxWidget name="TugaGroupsColorGreen" text="255" size="0.32 0.04" position="0.36 0.5" />
+    <EditBoxWidget name="TugaGroupsColorBlue" text="255" size="0.32 0.04" position="0.36 0.55" />
+
+    <TextWidget text="Layout Positions" size="0.32 0.03" position="0.02 0.46" />
+    <TextListboxWidget name="TugaGroupsLayoutList" size="0.32 0.22" position="0.02 0.5" />
+    <TextWidget text="Preview" size="0.32 0.03" position="0.36 0.46" />
+    <Widget type="PanelWidget" name="TugaGroupsLayoutPreview" size="0.32 0.22" position="0.36 0.5" />
+    <CheckBoxWidget name="TugaGroupsInvertX" text="Invert X" size="0.16 0.04" position="0.02 0.74" />
+    <CheckBoxWidget name="TugaGroupsInvertY" text="Invert Y" size="0.16 0.04" position="0.18 0.74" />
+
+    <TextWidget text="Misc" size="0.32 0.03" position="0.36 0.74" />
+    <CheckBoxWidget name="TugaGroupsEnableList" text="Enable PlayerList" size="0.32 0.04" position="0.36 0.78" />
+    <CheckBoxWidget name="TugaGroupsEnableCompass" text="Enable Compass" size="0.32 0.04" position="0.36 0.82" />
+    <CheckBoxWidget name="TugaGroupsEnableGps" text="Enable GPS" size="0.32 0.04" position="0.36 0.86" />
+
+    <ButtonWidget name="TugaGroupsConfigApply" text="Apply" size="0.32 0.04" position="0.36 0.92" />
+</Widget>

@@ -1,0 +1,5 @@
+<Widget type="PanelWidget" name="TugaGroupsSidebarRoot" size="0.28 0.8" position="0.01 0.12" halign="left" valign="top" flags="Visible">
+    <TextWidget text="Marker List" size="0.28 0.04" position="0 0" />
+    <TextWidget text="Personal / Group / Server / Pings" size="0.28 0.03" position="0 0.04" />
+    <TextListboxWidget name="TugaGroupsMarkerList" size="0.28 0.7" position="0 0.08" />
+</Widget>

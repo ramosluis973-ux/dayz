@@ -1,0 +1,6 @@
+<Widget type="PanelWidget" name="TugaGroupsGroupHudRoot" size="0.25 0.3" position="0.02 0.2" halign="left" valign="top" flags="Visible">
+    <TextWidget text="Group" size="0.25 0.03" position="0 0" />
+    <ScrollWidget name="TugaGroupsGroupHudScroll" size="0.25 0.26" position="0 0.04">
+        <Widget type="PanelWidget" name="TugaGroupsGroupHudListRoot" size="0.25 0.26" position="0 0" />
+    </ScrollWidget>
+</Widget>
