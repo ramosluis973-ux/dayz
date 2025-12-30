@@ -1,0 +1,5 @@
+<Widget type="PanelWidget" name="TugaGroupsGroupHudRow" size="0.25 0.04" flags="Visible">
+    <TextWidget name="RowName" text="Name" size="0.12 0.04" position="0 0" />
+    <ProgressBarWidget name="RowHealth" size="0.08 0.02" position="0.13 0.01" />
+    <TextWidget name="RowDist" text="0m" size="0.05 0.04" position="0.22 0" />
+</Widget>
