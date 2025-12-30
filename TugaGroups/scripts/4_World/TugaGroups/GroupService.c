@@ -419,6 +419,6 @@ class TugaGroupsGroupService
     {
         MakeDirectory("$profile:TugaGroups");
         array<ref TugaGroupsGroup> groups = GetGroups();
-        JsonFileLoader<array<ref TugaGroupsGroup>>.JsonSaveFile(m_GroupSnapshotPath, groups);
+        JsonFileLoader<array<ref TugaGroupsGroup> >.JsonSaveFile(m_GroupSnapshotPath, groups);
     }
 };

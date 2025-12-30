@@ -1,18 +1,18 @@
 class TugaGroupsMarkerService
 {
     private ref array<ref TugaGroupsAdminMarker> m_AdminMarkers;
-    private ref map<string, ref array<ref TugaGroupsGroupMarker>> m_GroupMarkers;
-    private ref map<string, ref array<ref TugaGroupsPrivateMarker>> m_PrivateMarkers;
-    private ref map<string, ref array<ref TugaGroupsPingMarker>> m_GroupPings;
+    private ref map<string, ref array<ref TugaGroupsGroupMarker> > m_GroupMarkers;
+    private ref map<string, ref array<ref TugaGroupsPrivateMarker> > m_PrivateMarkers;
+    private ref map<string, ref array<ref TugaGroupsPingMarker> > m_GroupPings;
     private ref map<string, int> m_LastPingTimes;
     private ref TugaGroupsSettings m_Settings;
 
     void TugaGroupsMarkerService(TugaGroupsSettings settings)
     {
         m_AdminMarkers = new array<ref TugaGroupsAdminMarker>();
-        m_GroupMarkers = new map<string, ref array<ref TugaGroupsGroupMarker>>();
-        m_PrivateMarkers = new map<string, ref array<ref TugaGroupsPrivateMarker>>();
-        m_GroupPings = new map<string, ref array<ref TugaGroupsPingMarker>>();
+        m_GroupMarkers = new map<string, ref array<ref TugaGroupsGroupMarker> >();
+        m_PrivateMarkers = new map<string, ref array<ref TugaGroupsPrivateMarker> >();
+        m_GroupPings = new map<string, ref array<ref TugaGroupsPingMarker> >();
         m_LastPingTimes = new map<string, int>();
         m_Settings = settings;
     }
@@ -26,7 +26,7 @@ class TugaGroupsMarkerService
     {
         string path = AdminMarkerPath();
         EnsureAdminMarkersFile(path);
-        JsonFileLoader<array<ref TugaGroupsAdminMarker>>.JsonLoadFile(path, m_AdminMarkers);
+        JsonFileLoader<array<ref TugaGroupsAdminMarker> >.JsonLoadFile(path, m_AdminMarkers);
     }
 
     void EnsureAdminMarkersFile(string path)
@@ -37,7 +37,7 @@ class TugaGroupsMarkerService
         }
         MakeDirectory("$profile:TugaGroups");
         array<ref TugaGroupsAdminMarker> defaults = new array<ref TugaGroupsAdminMarker>();
-        JsonFileLoader<array<ref TugaGroupsAdminMarker>>.JsonSaveFile(path, defaults);
+        JsonFileLoader<array<ref TugaGroupsAdminMarker> >.JsonSaveFile(path, defaults);
     }
 
     void InsertGroupMarker(TugaGroupsGroupMarker marker)

@@ -176,7 +176,7 @@ modded class MissionGameplay
             return;
         }
 
-        Param4<array<ref TugaGroupsAdminMarker>, array<ref TugaGroupsGroupMarker>, array<ref TugaGroupsPingMarker>, array<ref TugaGroupsPrivateMarker>> data;
+        Param4<array<ref TugaGroupsAdminMarker>, array<ref TugaGroupsGroupMarker>, array<ref TugaGroupsPingMarker>, array<ref TugaGroupsPrivateMarker> > data;
         if (!ctx.Read(data))
         {
             return;
