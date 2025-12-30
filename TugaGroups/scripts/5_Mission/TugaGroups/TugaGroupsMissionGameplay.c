@@ -111,6 +111,9 @@ modded class MissionGameplay
         super.OnInit();
         TugaGroupsClientManager.Get();
         RegisterTugaGroupsRPCs();
+#ifdef CF
+        CF_RegisterKeybinds(new TugaGroupsKeybinds());
+#endif
     }
 
     override void OnUpdate(float timeslice)
@@ -134,11 +137,12 @@ modded class MissionGameplay
 
     void HandleOpenMapInput()
     {
-        UAInput mapInput = GetUApi().GetInputByName(TugaGroupsInputIds.OPEN_MAP);
-        if (!mapInput || !mapInput.LocalPress())
+        if (!TugaGroupsInputState.TriggerOpenMap)
         {
             return;
         }
+
+        TugaGroupsInputState.TriggerOpenMap = false;
 
         UIScriptedMenu currentMenu = GetGame().GetUIManager().GetMenu();
         if (currentMenu && currentMenu.IsInherited(MapMenu))
@@ -221,11 +225,12 @@ modded class MissionGameplay
 
     void HandleAcceptInviteInput()
     {
-        UAInput inviteInput = GetUApi().GetInputByName(TugaGroupsInputIds.ACCEPT_INVITE);
-        if (!inviteInput || !inviteInput.LocalPress())
+        if (!TugaGroupsInputState.TriggerAcceptInvite)
         {
             return;
         }
+
+        TugaGroupsInputState.TriggerAcceptInvite = false;
 
         TugaGroupsClientState state = TugaGroupsClientManager.Get().State;
         if (state.PendingInviteFromId != string.Empty && GetGame().GetTime() < state.PendingInviteExpiresAt)

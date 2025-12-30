@@ -363,12 +363,14 @@ modded class MapMenu
 
     void HandlePingInput()
     {
-        UAInput pingInput = GetUApi().GetInputByName(TugaGroupsInputIds.PING);
-        if (pingInput && pingInput.LocalPress())
+        if (!TugaGroupsInputState.TriggerPing)
         {
-            vector cursorPos = GetCursorWorldPos();
-            TugaGroupsClientManager.Get().SendPing(cursorPos);
+            return;
         }
+
+        TugaGroupsInputState.TriggerPing = false;
+        vector cursorPos = GetCursorWorldPos();
+        TugaGroupsClientManager.Get().SendPing(cursorPos);
     }
 
     void RenderTugaGroupsMarkers()
@@ -996,11 +998,12 @@ modded class MapMenu
 
     void HandleDisplayModeCycleInput()
     {
-        UAInput toggleInput = GetUApi().GetInputByName(TugaGroupsInputIds.TOGGLE_DISPLAY_MODE);
-        if (!toggleInput || !toggleInput.LocalPress())
+        if (!TugaGroupsInputState.TriggerToggleDisplay)
         {
             return;
         }
+
+        TugaGroupsInputState.TriggerToggleDisplay = false;
 
         TugaGroupsClientState state = TugaGroupsClientManager.Get().State;
         state.ActiveDisplayCategoryIndex = (state.ActiveDisplayCategoryIndex + 1) % 4;
