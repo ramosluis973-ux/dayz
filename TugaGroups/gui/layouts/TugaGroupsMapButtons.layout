@@ -1,0 +1,4 @@
+<Widget type="PanelWidget" name="TugaGroupsButtons" size="0.25 0.1" position="0.02 0.08" halign="left" valign="top" flags="Visible">
+    <ButtonWidget name="TugaGroupsPing" text="Ping" size="0.25 0.04" position="0 0" />
+    <ButtonWidget name="TugaGroupsAddMarker" text="Add Marker" size="0.25 0.04" position="0 0.05" />
+</Widget>
