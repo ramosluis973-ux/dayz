@@ -766,7 +766,11 @@ modded class MapMenu
     void AddCategoryRow(string label, bool is3d, int type)
     {
         int row = m_MarkerList.AddItem(label, null, 0);
-        string mode = is3d ? "3D" : "2D";
+        string mode = "2D";
+        if (is3d)
+        {
+            mode = "3D";
+        }
         m_MarkerList.SetItem(row, mode, null, 1);
         m_MarkerList.SetItem(row, "", null, 2);
         m_RowTypes.Insert(type);
@@ -784,7 +788,11 @@ modded class MapMenu
         {
             TugaGroupsMarkerBase marker = markers[i];
             int row = m_MarkerList.AddItem(marker.Name, null, 0);
-            string mode = marker.RenderAs3D ? "3D" : "2D";
+            string mode = "2D";
+            if (marker.RenderAs3D)
+            {
+                mode = "3D";
+            }
             m_MarkerList.SetItem(row, mode, null, 1);
             m_MarkerList.SetItem(row, "X", null, 2);
             m_RowTypes.Insert(type);
