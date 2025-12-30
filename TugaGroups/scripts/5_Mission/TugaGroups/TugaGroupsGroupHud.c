@@ -77,7 +77,11 @@ class TugaGroupsGroupHud
             if (rowHealth)
             {
                 rowHealth.SetCurrent(health);
-                int color = health > 0 ? ARGB(255, 0, 200, 0) : ARGB(255, 200, 0, 0);
+                int color = ARGB(255, 200, 0, 0);
+                if (health > 0)
+                {
+                    color = ARGB(255, 0, 200, 0);
+                }
                 rowHealth.SetColor(color);
             }
             m_Rows.Insert(rowWidget);
